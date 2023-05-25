@@ -1899,7 +1899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs:
   - {fileID: 6249390834240331687, guid: 3fcfd21007694714a81b1b50ffd26b23, type: 3}
-  numObstacles: 10
+  numObstacles: 11
   spawnRadius: 15
 --- !u!64 &1053021358
 MeshCollider:
@@ -19572,6 +19572,7 @@ MonoBehaviour:
   sprintSpeed: 5
   rollSpeed: 10
   slowdownFactor: 0.75
+  sprintCooldownDuration: 5
 --- !u!212 &2068378485
 SpriteRenderer:
   m_ObjectHideFlags: 0

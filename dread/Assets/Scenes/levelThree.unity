@@ -301,8 +301,8 @@ GameObject:
   m_Component:
   - component: {fileID: 241098993}
   - component: {fileID: 241098992}
-  - component: {fileID: 241098994}
   - component: {fileID: 241098996}
+  - component: {fileID: 241098994}
   m_Layer: 0
   m_Name: Dread
   m_TagString: Dread
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  attackDistance: 2
+  attackDistance: 8
   avoidDistance: 5
   maxHealth: 500
   currentHealth: 0
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 286138129}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Dread
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -548,7 +548,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -4
+  m_SortingOrder: -5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -9330,7 +9330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549314656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.40843, y: 0.050013352, z: -10}
+  m_LocalPosition: {x: -11.434999, y: 0.050013352, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9623,8 +9623,8 @@ GameObject:
   - component: {fileID: 1707492659}
   - component: {fileID: 1707492658}
   - component: {fileID: 1707492662}
-  - component: {fileID: 1707492661}
   - component: {fileID: 1707492663}
+  - component: {fileID: 1707492661}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -9642,7 +9642,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0001353249, y: 0.04541029}
@@ -9758,7 +9758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 870119734}
-  osore: {fileID: 0}
+  osore: {fileID: 550980575}
   dread: {fileID: 241098990}
   ratskull: {fileID: 0}
   ratsToDefeat: 10

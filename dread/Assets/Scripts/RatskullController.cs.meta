@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 6c543d9892f8c05418373c59662496cf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ratPrefab: {fileID: 6414486470210752838, guid: 17cf12b7e857f3e4f88d18189cbdb7f5, type: 3}
+  - sword: {fileID: 486452352722789587, guid: 5df14e9ee5468ae40817867b1ca9e37b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

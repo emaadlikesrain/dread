@@ -1155,7 +1155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812254924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.630037, y: 1.6400051, z: -10}
+  m_LocalPosition: {x: -12.750952, y: 1.6400061, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1350,7 +1350,7 @@ MonoBehaviour:
   avoidDistance: 4
   maxHealth: 80
   currentHealth: 0
-  damage: 25
+  damage: 35
   door: {fileID: 1359053143}
 --- !u!61 &1202613733
 BoxCollider2D:

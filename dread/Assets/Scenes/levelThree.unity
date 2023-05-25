@@ -425,7 +425,7 @@ MonoBehaviour:
   maxHealth: 500
   currentHealth: 0
   damage: 34
-  projectilePrefab: {fileID: 2098786539807529697, guid: 63a92592939c3c84aa1c53983518e168, type: 3}
+  projectilePrefab: {fileID: 861034259451069903, guid: ca3848eb5389dd84e8091bcb072bfb00, type: 3}
   projectileSpawnPoint: {fileID: 1664174167}
 --- !u!50 &241098997
 Rigidbody2D:
@@ -9342,7 +9342,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549314656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.814196, y: 0.050014783, z: -10}
+  m_LocalPosition: {x: -9.000003, y: 0.050015975, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

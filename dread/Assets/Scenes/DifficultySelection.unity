@@ -1315,7 +1315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   easyButton: {fileID: 987360564}
-  normalButton: {fileID: 1322717654}
+  mediumButton: {fileID: 1322717654}
   hardButton: {fileID: 1376675641}
 --- !u!4 &1989974595
 Transform:

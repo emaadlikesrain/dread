@@ -1,17 +1,22 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Movement : MonoBehaviour
 {
     public float speed = 5f;
     public float sprintSpeed = 10f;
     public float rollSpeed = 20f;
-    public float slowdownFactor = 0.5f; // Add a slowdown factor variable
+    public float slowdownFactor = 0.5f;
+
+    public float sprintCooldownDuration = 3f;
+    private bool isSprinting = false;
+    private float sprintCooldownTimer = 0f;
 
     private Animator animator;
     private Rigidbody2D rb;
     private bool isRolling = false;
-    private bool isSlowed = false; // Add a flag to track if the player is slowed down
+    private bool isSlowed = false;
 
     private void Start()
     {
@@ -24,19 +29,14 @@ public class Movement : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector2 movement = new Vector2(horizontal, vertical);
+        Vector2 movement = new Vector2(horizontal, vertical).normalized;
 
-        if (Input.GetKey(KeyCode.LeftShift) && !isSlowed) // Check if the player is currently slowed down
+        if (movement.magnitude > 0f)
         {
-            movement *= sprintSpeed;
-            animator.SetFloat("Speed", 2f);
-        }
-        else if (movement.magnitude > 0f)
-        {
-            if (!isSlowed) // Check if the player is currently slowed down
+            if (!isSlowed)
                 movement *= speed;
             else
-                movement *= speed * slowdownFactor; // Apply slowdown effect
+                movement *= speed * slowdownFactor;
             animator.SetFloat("Speed", 1f);
         }
         else
@@ -53,6 +53,38 @@ public class Movement : MonoBehaviour
         }
 
         rb.velocity = movement;
+
+        // Check for sprint input and cooldown
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isSprinting && sprintCooldownTimer <= 0)
+        {
+            StartSprinting();
+        }
+
+        // Perform sprinting actions
+        if (isSprinting)
+        {
+            if (Input.GetKey(KeyCode.LeftShift) && !isSlowed)
+            {
+                rb.velocity = movement.normalized * sprintSpeed;
+                animator.SetFloat("Speed", 2f);
+            }
+            else
+            {
+                StopSprinting();
+            }
+        }
+
+        // Update sprint cooldown timer
+        if (sprintCooldownTimer > 0)
+        {
+            sprintCooldownTimer -= Time.deltaTime;
+        }
+
+        // Check if the cooldown timer reaches or goes below zero
+        if (sprintCooldownTimer <= 0)
+        {
+            sprintCooldownTimer = 0;
+        }
     }
 
     IEnumerator StopRolling()
@@ -71,5 +103,16 @@ public class Movement : MonoBehaviour
     public void ResetSlowdown()
     {
         isSlowed = false;
+    }
+
+    void StartSprinting()
+    {
+        isSprinting = true;
+        sprintCooldownTimer = sprintCooldownDuration;
+    }
+
+    void StopSprinting()
+    {
+        isSprinting = false;
     }
 }

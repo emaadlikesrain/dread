@@ -9,7 +9,8 @@ public class TutorialDummy : MonoBehaviour
             TutorialManager tutorialManager = FindObjectOfType<TutorialManager>();
             if (tutorialManager != null)
             {
-                tutorialManager.SetDialogueText("Great! Now you can proceed.");
+                tutorialManager.SetDialogueText("nice hit.");
+                gameObject.SetActive(false);
             }
         }
     }

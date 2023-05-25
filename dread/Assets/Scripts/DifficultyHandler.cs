@@ -1,60 +1,86 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class DifficultySelection : MonoBehaviour
+public class DifficultyHandler : MonoBehaviour
 {
-    public Button manicButton;
-    public Button panicButton;
-    public Button tragicButton;
-
-    private void Start()
+    private enum Difficulty
     {
-        manicButton.onClick.AddListener(ManicButtonClicked);
-        panicButton.onClick.AddListener(PanicButtonClicked);
-        tragicButton.onClick.AddListener(TragicButtonClicked);
+        Easy,
+        Normal,
+        Hard
     }
 
-    private void ManicButtonClicked()
-    {
-        StartGame("Manic");
-    }
+    [SerializeField] private Difficulty selectedDifficulty;
 
-    private void PanicButtonClicked()
+    public void SetDifficulty(string difficulty)
     {
-        StartGame("Panic");
-    }
-
-    private void TragicButtonClicked()
-    {
-        StartGame("Tragic");
-    }
-
-    private void StartGame(string difficulty)
-    {
-        // Set the enemy's stats based on the selected difficulty
-        SetEnemyStats(difficulty);
-
-        // Load the game scene
-        SceneManager.LoadScene("GameScene");
-    }
-
-    private void SetEnemyStats(string difficulty)
-    {
-        // Adjust enemy's stats based on the selected difficulty
         switch (difficulty)
         {
-            case "Manic":
-                // Set enemy's stats for easy difficulty
-                EnemyStats.SetEasyStats();
+            case "Easy":
+                selectedDifficulty = Difficulty.Easy;
+                AdjustEnemyStatsForDifficulty();
                 break;
-            case "Panic":
-                // Set enemy's stats for medium difficulty
-                EnemyStats.SetMediumStats();
+            case "Normal":
+                selectedDifficulty = Difficulty.Normal;
+                AdjustEnemyStatsForDifficulty();
                 break;
-            case "Tragic":
-                // Set enemy's stats for hard difficulty
-                EnemyStats.SetHardStats();
+            case "Hard":
+                selectedDifficulty = Difficulty.Hard;
+                AdjustEnemyStatsForDifficulty();
+                break;
+            default:
+                Debug.LogError("Invalid difficulty selection.");
+                break;
+        }
+    }
+
+    public void EnterGame()
+    {
+        SceneManager.LoadScene("GameScene"); // Replace "GameScene" with the name of your game scene
+    }
+
+    private void AdjustEnemyStatsForDifficulty()
+    {
+        // Adjust the stats of enemies based on the selected difficulty
+        switch (selectedDifficulty)
+        {
+            case Difficulty.Easy:
+                // Adjust stats for easy difficulty
+                RatskullController ratskull = FindObjectOfType<RatskullController>();
+                if (ratskull != null)
+                {
+                    ratskull.maxHealth = 100;
+                    ratskull.damage = 10;
+                }
+                // Adjust stats for other enemies
+                // ...
+                break;
+            case Difficulty.Normal:
+                // Adjust stats for normal difficulty
+                RatskullController ratskull = FindObjectOfType<RatskullController>();
+                if (ratskull != null)
+                {
+                    ratskull.maxHealth = 200;
+                    ratskull.damage = 20;
+                }
+                // Adjust stats for other enemies
+                // ...
+                break;
+            case Difficulty.Hard:
+                // Adjust stats for hard difficulty
+                RatskullController ratskull = FindObjectOfType<RatskullController>();
+                if (ratskull != null)
+                {
+                    ratskull.maxHealth = 300;
+                    ratskull.damage = 30;
+                }
+                // Adjust stats for other enemies
+                // ...
+                break;
+            default:
+                Debug.LogError("Invalid difficulty selection.");
                 break;
         }
     }

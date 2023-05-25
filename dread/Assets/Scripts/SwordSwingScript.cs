@@ -22,6 +22,27 @@ public class SwordSwingScript : MonoBehaviour
         ratskullScript = ratskull.GetComponent<RatskullController>();
     }
 
+    private void Update()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+
+        // Step 3: Convert mouse position to world coordinates
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        mouseWorldPosition.z = 0f; // Assuming the player is on the same Z-axis as the mouse cursor
+
+        // Step 4: Calculate direction vector
+        Vector3 direction = mouseWorldPosition - transform.position;
+
+        // Step 5: Calculate angle in radians
+        float angleRad = Mathf.Atan2(direction.y, direction.x);
+
+        // Step 6: Convert angle to degrees
+        float angleDeg = Mathf.Rad2Deg * angleRad;
+
+        // Step 7: Apply rotation to the player
+        transform.rotation = Quaternion.Euler(0f, 0f, angleDeg);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Rat"))

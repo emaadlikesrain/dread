@@ -1140,7 +1140,7 @@ GameObject:
   - component: {fileID: 711217850}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20133,7 +20133,7 @@ MonoBehaviour:
   sprintSpeed: 5
   rollSpeed: 10
   slowdownFactor: 0.75
-  sprintCooldownDuration: 5
+  sprintCooldownDuration: 2
 --- !u!212 &2068378485
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ TagManager:
   - Rat
   - Dread
   - Osore
+  - RatSkull
+  - Sword
   layers:
   - Default
   - TransparentFX

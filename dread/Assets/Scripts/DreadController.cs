@@ -21,6 +21,8 @@ public class DreadController : MonoBehaviour
     private bool isMoving = false;
     private bool isShooting = false;
 
+    private bool shouldMoveTowardsPlayer = true;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -59,13 +61,29 @@ public class DreadController : MonoBehaviour
     IEnumerator MoveCoroutine()
     {
         isMoving = true;
-        Vector2 targetPosition = new Vector2(Random.Range(-8f, 8f), Random.Range(-4f, 4f));
-        while (Vector2.Distance(transform.position, targetPosition) > 0.1f)
+
+        if (shouldMoveTowardsPlayer)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-            yield return null;
-            //rb.MovePosition(transform.position);
+            Vector2 targetPosition = player.position;
+            while (Vector2.Distance(transform.position, targetPosition) > 0.1f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+                yield return null;
+            }
         }
+        else
+        {
+            Vector2 targetPosition = new Vector2(Random.Range(-8f, 8f), Random.Range(-4f, 4f));
+            while (Vector2.Distance(transform.position, targetPosition) > 0.1f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+                yield return null;
+            }
+        }
+
+        // Toggle the movement mode
+        shouldMoveTowardsPlayer = !shouldMoveTowardsPlayer;
+
         isMoving = false;
     }
 
@@ -102,7 +120,6 @@ public class DreadController : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, avoidPosition, speed * Time.deltaTime);
             yield return null;
-            //rb.MovePosition(transform.position);
         }
         isMoving = false;
     }
@@ -110,6 +127,7 @@ public class DreadController : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+        SceneManager.LoadScene("win");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -244,7 +244,7 @@ MonoBehaviour:
   sprintSpeed: 5
   rollSpeed: 10
   slowdownFactor: 0.5
-  sprintCooldownDuration: 3
+  sprintCooldownDuration: 2
 --- !u!212 &3226543
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -817,8 +817,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs:
   - {fileID: 1591180951854513046, guid: f92f4fd1dce1d5445a08469954559e7f, type: 3}
-  numObstacles: 12
-  spawnRadius: 5
+  numObstacles: 15
+  spawnRadius: 6
 --- !u!64 &565689821
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -849,7 +849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565689819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2054, y: -0.0245, z: 0}
+  m_LocalPosition: {x: -1.2054, y: 3.35, z: 0}
   m_LocalScale: {x: 8.62383, y: 12.319989, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1155,7 +1155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812254924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.750952, y: 1.6400061, z: -10}
+  m_LocalPosition: {x: -13.630037, y: 1.6400051, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

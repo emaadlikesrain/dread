@@ -10,14 +10,34 @@ public class nextLevel : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Scene currentScene = SceneManager.GetActiveScene();
-            if (currentScene.name == "SampleScene")
+            if (currentScene.name == "manic_levelOne")
             {
-                SceneManager.LoadScene("levelTwo");
+                SceneManager.LoadScene("manic_levelTwo");
             }
 
-            if (currentScene.name == "levelTwo")
+            if (currentScene.name == "manic_levelTwo")
             {
-                SceneManager.LoadScene("levelThree");
+                SceneManager.LoadScene("manic_levelThree");
+            }
+
+            if (currentScene.name == "panic_levelOne")
+            {
+                SceneManager.LoadScene("panic_levelTwo");
+            }
+
+            if (currentScene.name == "panic_levelTwo")
+            {
+                SceneManager.LoadScene("panic_levelThree");
+            }
+
+            if (currentScene.name == "tragic_levelOne")
+            {
+                SceneManager.LoadScene("tragic_levelTwo");
+            }
+
+            if (currentScene.name == "tragic_levelTwo")
+            {
+                SceneManager.LoadScene("tragic_levelThree");
             }
         }
     }

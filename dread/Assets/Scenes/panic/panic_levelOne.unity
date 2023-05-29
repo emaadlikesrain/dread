@@ -669,7 +669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5223522, y: -0.029987633, z: -10}
+  m_LocalPosition: {x: -1.8152933, y: -0.029987633, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1140,7 +1140,7 @@ GameObject:
   - component: {fileID: 711217850}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Sword
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2153,7 +2153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031280840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.700303, y: -0.030000031, z: -10}
+  m_LocalPosition: {x: -10.498083, y: -0.030000031, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19991,7 +19991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  ratPrefab: {fileID: 6414486470210752838, guid: 17cf12b7e857f3e4f88d18189cbdb7f5, type: 3}
+  ratPrefab: {fileID: 6414486470210752838, guid: 33137688dc252e84f9497ce068c7003e, type: 3}
   spawnRate: 1
   attackDistance: 50
   sword: {fileID: 711217843}
@@ -20048,7 +20048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 100
+  currentHealth: 0
   healthSlider: {fileID: 627387118}
 --- !u!95 &2068378481
 Animator:

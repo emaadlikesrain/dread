@@ -24,9 +24,18 @@ public class DifficultyHandler : MonoBehaviour
 
     private void SelectDifficulty(Difficulty difficulty)
     {
-        // Set the selected difficulty in the GameManager
+        if (difficulty == Difficulty.Easy)
+        {
+            SceneManager.LoadScene("manic_levelOne");
+        }
+        if (difficulty == Difficulty.Medium)
+        {
+            SceneManager.LoadScene("panic_levelOne");
+        }
+        if (difficulty == Difficulty.Hard)
+        {
+            SceneManager.LoadScene("tragic_levelOne");
+        }
 
-        // Load the SampleScene
-        SceneManager.LoadScene("SampleScene");
     }
 }

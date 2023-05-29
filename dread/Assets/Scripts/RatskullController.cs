@@ -13,6 +13,7 @@ public class RatskullController : MonoBehaviour
     public int maxHealth = 75;
     public int currentHealth;
     public int damage = 15;
+    public int ratsNeeded = 10;
 
     private Transform player; // A reference to the player's transform
     private float spawnTimer = 0f; // A timer to keep track of when to spawn rats
@@ -37,16 +38,8 @@ public class RatskullController : MonoBehaviour
         // Check if the player is within attack distance
         if (player != null && Vector2.Distance(transform.position, player.position) <= attackDistance)
         {
-            if (swordScript == null)
-            {
-                Debug.Log("ballz");
-            }
-            if (swordScript.ratsKilled == null)
-            {
-                Debug.Log("moew");
-            }
             // Start attacking
-            if (swordScript.ratsKilled <= 10)
+            if (swordScript.ratsKilled <= ratsNeeded)
             {
                 spawnTimer += Time.deltaTime;
                 if (spawnTimer >= spawnRate)

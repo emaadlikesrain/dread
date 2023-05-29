@@ -73,7 +73,7 @@ public class DreadController : MonoBehaviour
         }
         else
         {
-            Vector2 targetPosition = new Vector2(Random.Range(-5f, 5f), Random.Range(-4f, 4f));
+            Vector2 targetPosition = new Vector2(Random.Range(-8f, 8f), Random.Range(-4f, 4f));
             while (Vector2.Distance(transform.position, targetPosition) > 0.1f)
             {
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);

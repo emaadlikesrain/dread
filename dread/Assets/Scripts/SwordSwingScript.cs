@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SwordSwingScript : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SwordSwingScript : MonoBehaviour
     public GameObject osore;
     public GameObject dread;
     public GameObject ratskull;
+    public TMP_Text rk;
     public int ratsToDefeat = 10;
     public int ratsKilled = 0;
     public int damage = 20;
@@ -49,6 +51,7 @@ public class SwordSwingScript : MonoBehaviour
         {
             Destroy(collision.gameObject);
             ratsKilled++;
+            rk.text = ("Rats Killed: " + ratsKilled.ToString());
 
             if (ratsKilled >= ratsToDefeat)
             {

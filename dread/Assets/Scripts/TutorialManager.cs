@@ -12,10 +12,11 @@ public class TutorialManager : MonoBehaviour
 
     private int currentDialogueIndex = 0;
     private string[] dialogueTexts = {
-        "Welcome to the tutorial!",
-        "Use the WASD keys to move around.",
-        "Press the left mouse button to attack the dummy.",
-        "Great job! You're ready to explore level 1 now!"
+        "welcome to the tutorial.",
+        "you can use the WASD keys to move around.",
+        "press the left mouse button to attack.",
+        "you can use shift to sprint while moving.",
+        "that's all, good luck."
     };
 
     private bool isTyping = false;
@@ -33,26 +34,6 @@ public class TutorialManager : MonoBehaviour
         dialogueText.text = "";
         tutorialDummy.SetActive(true);
         TypeDialogueText(dialogueTexts[currentDialogueIndex]);
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (isTyping)
-            {
-                CompleteText();
-            }
-            else if (currentDialogueIndex < dialogueTexts.Length - 1)
-            {
-                currentDialogueIndex++;
-                TypeDialogueText(dialogueTexts[currentDialogueIndex]);
-            }
-            else
-            {
-                StartLevel();
-            }
-        }
     }
 
     private void TypeDialogueText(string text)

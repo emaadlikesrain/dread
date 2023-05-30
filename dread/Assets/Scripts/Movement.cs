@@ -13,15 +13,21 @@ public class Movement : MonoBehaviour
     private bool isSprinting = false;
     private float sprintCooldownTimer = 0f;
 
+    public AudioClip walkingSound;
+    public AudioClip runningSound;
+
     private Animator animator;
     private Rigidbody2D rb;
     private bool isRolling = false;
     private bool isSlowed = false;
 
+    private AudioSource audioSource;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -30,18 +36,25 @@ public class Movement : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         Vector2 movement = new Vector2(horizontal, vertical).normalized;
+        bool isMoving = movement.magnitude > 0f;
 
-        if (movement.magnitude > 0f)
+        if (!isMoving)
         {
-            if (!isSlowed)
-                movement *= speed;
-            else
-                movement *= speed * slowdownFactor;
+            // Player is not moving
+            audioSource.Stop();
+            animator.SetFloat("Speed", 0f);
+            return;
+        }
+
+        if (!isSlowed)
+        {
+            movement *= speed;
             animator.SetFloat("Speed", 1f);
         }
         else
         {
-            animator.SetFloat("Speed", 0f);
+            movement *= speed * slowdownFactor;
+            animator.SetFloat("Speed", slowdownFactor);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && !isRolling)
@@ -67,11 +80,16 @@ public class Movement : MonoBehaviour
             {
                 rb.velocity = movement.normalized * sprintSpeed;
                 animator.SetFloat("Speed", 2f);
+                PlayRunningSound();
             }
             else
             {
                 StopSprinting();
             }
+        }
+        else
+        {
+            PlayWalkingSound();
         }
 
         // Update sprint cooldown timer
@@ -86,6 +104,45 @@ public class Movement : MonoBehaviour
             sprintCooldownTimer = 0;
         }
     }
+
+    private void PlayWalkingSound()
+    {
+        if (!audioSource.isPlaying && walkingSound != null)
+        {
+            audioSource.clip = walkingSound;
+            audioSource.Play();
+        }
+    }
+
+    private void StopWalkingSound()
+    {
+        if (audioSource.isPlaying && audioSource.clip == walkingSound)
+        {
+            audioSource.Stop();
+        }
+    }
+
+    private void PlayRunningSound()
+    {
+        if (!audioSource.isPlaying && runningSound != null)
+        {
+            if (audioSource.clip != runningSound)
+            {
+                audioSource.Stop();
+                audioSource.clip = runningSound;
+            }
+            audioSource.Play();
+        }
+    }
+
+    private void StopRunningSound()
+    {
+        if (audioSource.isPlaying && audioSource.clip == runningSound)
+        {
+            audioSource.Stop();
+        }
+    }
+
 
     IEnumerator StopRolling()
     {

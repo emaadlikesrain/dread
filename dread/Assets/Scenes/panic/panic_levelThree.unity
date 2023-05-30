@@ -6193,7 +6193,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bf6e90d5f38e3004fa0b6668ded74b8e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.404
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8977,7 +8977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 521, y: 246}
+  m_AnchoredPosition: {x: 475, y: 252.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &977845027
@@ -9634,7 +9634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549314656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.769682, y: 0.05001669, z: -10}
+  m_LocalPosition: {x: -11.449011, y: 0.050013352, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10086,6 +10086,7 @@ MonoBehaviour:
   osore: {fileID: 550980575}
   dread: {fileID: 1814540542}
   ratskull: {fileID: 0}
+  rk: {fileID: 0}
   ratsToDefeat: 10
   ratsKilled: 0
   damage: 20

@@ -19531,7 +19531,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 086abf5a5c7210c4fab5cb4e36dccb0c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 86c8eff1545bc2641821e1f1b54d13b3, type: 3}
   m_Color: {r: 0.7046466, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19550,8 +19550,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622557029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.1847, y: 1.7671, z: 0}
-  m_LocalScale: {x: 5.1447735, y: 4.688838, z: 6.657981}
+  m_LocalPosition: {x: -8.7, y: 1.74, z: 0}
+  m_LocalScale: {x: 0.81438, y: 0.81438, z: 0.81438}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -19991,7 +19991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  ratPrefab: {fileID: 6414486470210752838, guid: fc1f4280c3f123041b1f3e776029c116, type: 3}
+  ratPrefab: {fileID: 6414486470210752838, guid: 17cf12b7e857f3e4f88d18189cbdb7f5, type: 3}
   spawnRate: 1
   attackDistance: 50
   sword: {fileID: 711217843}
@@ -20049,7 +20049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   healthSlider: {fileID: 627387118}
 --- !u!95 &2068378481
 Animator:

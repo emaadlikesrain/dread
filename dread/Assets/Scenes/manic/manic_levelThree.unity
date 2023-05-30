@@ -6162,7 +6162,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bf6e90d5f38e3004fa0b6668ded74b8e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.404
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6426,9 +6426,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad14390a07aa854fb8ee2adcb4472ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs: []
-  numObstacles: 5
-  spawnRadius: 3
+  obstaclePrefabs:
+  - {fileID: 2689000915461566624, guid: 852f5b0448590af4d95a16aadc933d64, type: 3}
+  numObstacles: 3
+  spawnRadius: 12
 --- !u!64 &379966377
 MeshCollider:
   m_ObjectHideFlags: 0

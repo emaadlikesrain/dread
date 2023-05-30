@@ -31,6 +31,16 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value = currentHealth;
     }
 
+    public void Heal(float healAmount)
+    {
+        currentHealth += healAmount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        healthSlider.value = currentHealth;
+    }
+
     private void Die()
     {
         SceneManager.LoadScene("lose");

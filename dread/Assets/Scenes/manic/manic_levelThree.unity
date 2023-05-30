@@ -6392,7 +6392,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f25ab5f405e47544ea15cf7a7179590c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6426,8 +6426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad14390a07aa854fb8ee2adcb4472ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs:
-  - {fileID: 1591180951854513046, guid: 184f29dd05c1fef47b1beb55436ca8d4, type: 3}
+  obstaclePrefabs: []
   numObstacles: 5
   spawnRadius: 3
 --- !u!64 &379966377
@@ -6460,8 +6459,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379966374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.71, y: -1.3, z: 0}
-  m_LocalScale: {x: 8.62383, y: 12.319989, z: 1}
+  m_LocalPosition: {x: -9.0661, y: -1.0289, z: 0}
+  m_LocalScale: {x: 26.853487, y: 15.234497, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -9349,7 +9348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549314656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.769682, y: 0.05001669, z: -10}
+  m_LocalPosition: {x: -11.13241, y: 0.050013352, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

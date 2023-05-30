@@ -36,25 +36,20 @@ public class Movement : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         Vector2 movement = new Vector2(horizontal, vertical).normalized;
-        bool isMoving = movement.magnitude > 0f;
 
-        if (!isMoving)
+        if (movement.magnitude > 0f)
         {
-            // Player is not moving
-            audioSource.Stop();
-            animator.SetFloat("Speed", 0f);
-            return;
-        }
-
-        if (!isSlowed)
-        {
-            movement *= speed;
+            if (!isSlowed)
+                movement *= speed;
+            else
+                movement *= speed * slowdownFactor;
             animator.SetFloat("Speed", 1f);
+            PlayWalkingSound();
         }
         else
         {
-            movement *= speed * slowdownFactor;
-            animator.SetFloat("Speed", slowdownFactor);
+            animator.SetFloat("Speed", 0f);
+            StopWalkingSound();
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && !isRolling)
@@ -71,6 +66,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && !isSprinting && sprintCooldownTimer <= 0)
         {
             StartSprinting();
+            PlayRunningSound();
         }
 
         // Perform sprinting actions
@@ -80,16 +76,12 @@ public class Movement : MonoBehaviour
             {
                 rb.velocity = movement.normalized * sprintSpeed;
                 animator.SetFloat("Speed", 2f);
-                PlayRunningSound();
             }
             else
             {
                 StopSprinting();
+                StopRunningSound();
             }
-        }
-        else
-        {
-            PlayWalkingSound();
         }
 
         // Update sprint cooldown timer
@@ -134,6 +126,7 @@ public class Movement : MonoBehaviour
             audioSource.Play();
         }
     }
+
 
     private void StopRunningSound()
     {

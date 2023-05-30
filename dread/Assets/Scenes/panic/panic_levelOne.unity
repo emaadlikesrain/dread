@@ -669,7 +669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1576357, y: -0.029987633, z: -10}
+  m_LocalPosition: {x: -1.1152925, y: -0.029987633, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1471,7 +1471,6 @@ GameObject:
   - component: {fileID: 779654271}
   - component: {fileID: 779654270}
   - component: {fileID: 779654269}
-  - component: {fileID: 779654273}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1564,22 +1563,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &779654273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 779654268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7953a108f3e7ba844b03850673aa06e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: {fileID: 953432549}
-  tutorialDummy: {fileID: 0}
-  parent: {fileID: 884525049}
-  typingSpeed: 0.1
 --- !u!1 &795631043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,7 +2099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031280840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.709316, y: -0.030000031, z: -10}
+  m_LocalPosition: {x: -10.066162, y: -0.030000031, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15400,7 +15383,7 @@ GameObject:
   - component: {fileID: 1216824462}
   - component: {fileID: 1216824461}
   - component: {fileID: 1216824460}
-  - component: {fileID: 1216824459}
+  - component: {fileID: 1216824463}
   m_Layer: 0
   m_Name: Dummy
   m_TagString: Untagged
@@ -15408,18 +15391,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1216824459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216824458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 080d1247f5e3b5c44a9156fe35e9f0a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1216824460
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15513,6 +15484,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1216824463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216824458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7953a108f3e7ba844b03850673aa06e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 953432549}
+  tutorialDummy: {fileID: 1216824458}
+  parent: {fileID: 884525049}
+  typingSpeed: 0.1
 --- !u!1 &1266855805
 GameObject:
   m_ObjectHideFlags: 0
@@ -20408,6 +20395,8 @@ MonoBehaviour:
   rollSpeed: 10
   slowdownFactor: 0.75
   sprintCooldownDuration: 2
+  walkingSound: {fileID: 8300000, guid: 3b95321162e664549bfd94d1f288d628, type: 3}
+  runningSound: {fileID: 8300000, guid: da628a2ca331ab146b8392079cb02784, type: 3}
 --- !u!212 &2068378485
 SpriteRenderer:
   m_ObjectHideFlags: 0
